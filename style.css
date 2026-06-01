@@ -29,6 +29,7 @@ h1, #accordion-container {
 h1 {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0.2em;
+  font-size: 2rem;
 }
 
 .pink-line {
@@ -41,7 +42,6 @@ h1 {
         .header-logo {
             text-align: center;
             padding: 4rem 1rem;
-            font-size: 1rem;
             color: #999;
         }
 
