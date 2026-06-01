@@ -54,12 +54,12 @@ h1 {
 /* 階層のインデント（あえて浅くしてスマホで見やすく） */
 .accordion-list .accordion-list {
   padding-left: 15px; 
-  border-left: 1px solid #ff0000; /* 階層のガイド線 */
+  border-left: 1px solid var(--bg-color); /* 階層のガイド線 */
 }
 
 details {
   margin-bottom: 10px;
-  background-color: var(--bg-color);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 4px;
   overflow: hidden; /* 角丸からはみ出るのを防ぐ */
   transition: all 0.3s ease;
@@ -90,44 +90,44 @@ summary::before {
   top: 50%;
   width: 6px;
   height: 6px;
-  border-top: 2px solid #aaa;
-  border-right: 2px solid #aaa;
+  border-top: 2px solid var(--bg-color);
+  border-right: 2px solid var(--bg-color);
   transform: translateY(-50%) rotate(45deg); /* 右向き矢印 */
   transition: transform 0.3s;
 }
 
 /* ホバー時 */
 summary:hover {
-  background-color: #3d3d3d;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* 開いている状態のデザイン */
 details[open] > summary {
-  background-color: #2a2a2a;
-  border-left-color: #d4af37; /* アクセントカラー：ゴールド */
-  color: #d4af37;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left-color: var(--accent-pink); /* アクセントカラー：ゴールド */
+  color: var(--accent-pink);
 }
 
 /* 開いている時の矢印（下向き） */
 details[open] > summary::before {
   transform: translateY(-70%) rotate(135deg);
-  border-color: #d4af37;
+  border-color: var(--accent-pink);
 }
 
 /* ヒント本文 */
 .hint-content {
   padding: 20px;
-  background-color: #1a1a1a;
-  color: #ccc;
+  background-color: var(--bg-color);
+  color: var(--dark-gray);
   line-height: 1.8;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--bg-color);
   animation: fadeIn 0.5s ease;
 }
 
 .hint-content img {
   max-width: 100%;
   border-radius: 4px;
-  border: 1px solid #444;
+  border: 1px solid var(--bg-color);
 }
 
 /* フェードインアニメーション */
