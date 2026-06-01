@@ -1,85 +1,112 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   margin: 0;
   padding: 20px;
-  background-color: #f0f2f5;
-  color: #333;
+  background-color: #1a1a1a; /* 背景色：ダークグレー */
+  color: #ddd; /* 文字色：薄いグレー */
 }
+
 h1, #accordion-container {
   max-width: 800px;
   margin: 0 auto;
 }
+
 h1 {
   text-align: center;
-  color: #4a5568;
-  margin-bottom: 30px;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
 }
+
+/* リストのリセット */
 .accordion-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
+/* 階層のインデント（あえて浅くしてスマホで見やすく） */
 .accordion-list .accordion-list {
-  padding-top: 10px;
-  padding-left: 15px;
+  padding-left: 15px; 
+  border-left: 1px solid #444; /* 階層のガイド線 */
 }
+
 details {
-  margin-bottom: 12px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 10px;
+  background-color: #252525;
+  border-radius: 4px;
+  overflow: hidden; /* 角丸からはみ出るのを防ぐ */
+  transition: all 0.3s ease;
 }
-details details {
-  box-shadow: none;
-  border: 1px solid #eee;
-}
+
 summary {
-  display: block;
-  padding: 16px 20px 16px 40px;
+  display: block; /* Chrome等のバグ対策 */
+  padding: 15px 20px 15px 45px; /* 左パディングを広めに */
   cursor: pointer;
   position: relative;
-  font-weight: 600;
-  color: #2d3748;
+  font-weight: bold;
+  color: #fff;
+  background: #333;
   user-select: none;
   outline: none;
-  border-radius: 12px;
-  transition: background 0.2s;
+  border-left: 4px solid transparent; /* アクセントバーの準備 */
+  transition: background 0.2s, border-color 0.2s;
 }
+
+/* デフォルトの矢印を消す */
 summary::-webkit-details-marker { display: none; }
+
+/* オリジナルの矢印（＞） */
 summary::before {
-  content: '+';
+  content: '';
   position: absolute;
-  left: 12px;
+  left: 18px;
   top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background-color: #e2e8f0;
-  color: #718096;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-  font-weight: bold;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #aaa;
+  border-right: 2px solid #aaa;
+  transform: translateY(-50%) rotate(45deg); /* 右向き矢印 */
+  transition: transform 0.3s;
 }
+
+/* ホバー時 */
+summary:hover {
+  background-color: #3d3d3d;
+}
+
+/* 開いている状態のデザイン */
 details[open] > summary {
-  background-color: #f7fafc;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  color: #3182ce;
+  background-color: #2a2a2a;
+  border-left-color: #d4af37; /* アクセントカラー：ゴールド */
+  color: #d4af37;
 }
+
+/* 開いている時の矢印（下向き） */
 details[open] > summary::before {
-  content: '-';
-  background-color: #3182ce;
-  color: #fff;
+  transform: translateY(-70%) rotate(135deg);
+  border-color: #d4af37;
 }
+
+/* ヒント本文 */
 .hint-content {
   padding: 20px;
-  line-height: 1.6;
-  color: #4a5568;
-  border-top: 1px solid #f0f0f0;
+  background-color: #1a1a1a;
+  color: #ccc;
+  line-height: 1.8;
+  border-top: 1px solid #333;
+  animation: fadeIn 0.5s ease;
 }
+
 .hint-content img {
   max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  border: 1px solid #444;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
