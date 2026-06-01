@@ -54,12 +54,12 @@ h1 {
 /* 階層のインデント（あえて浅くしてスマホで見やすく） */
 .accordion-list .accordion-list {
   padding-left: 15px; 
-  border-left: 1px solid #444; /* 階層のガイド線 */
+  border-left: 1px solid #ff0000; /* 階層のガイド線 */
 }
 
 details {
   margin-bottom: 10px;
-  background-color: #252525;
+  background-color: var(--bg-color);
   border-radius: 4px;
   overflow: hidden; /* 角丸からはみ出るのを防ぐ */
   transition: all 0.3s ease;
@@ -71,8 +71,8 @@ summary {
   cursor: pointer;
   position: relative;
   font-weight: bold;
-  color: #fff;
-  background: #333;
+  color: var(--dark-gray);
+  background: var(--bg-color);
   user-select: none;
   outline: none;
   border-left: 4px solid transparent; /* アクセントバーの準備 */
