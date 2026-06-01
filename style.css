@@ -1,9 +1,12 @@
 body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  /* 明朝体指定 */
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "HGS Mincho E", serif;
   margin: 0;
   padding: 20px;
-  background-color: #1a1a1a; /* 背景色：ダークグレー */
-  color: #ddd; /* 文字色：薄いグレー */
+  background-color: #fdfbf7; /* 背景色：生成り色 */
+  color: #4a4a4a;
+  background-image: linear-gradient(#e8e4dc 1px, transparent 1px); /* ノートのような罫線 */
+  background-size: 100% 30px;
 }
 
 h1, #accordion-container {
@@ -13,100 +16,76 @@ h1, #accordion-container {
 
 h1 {
   text-align: center;
-  color: #fff;
-  letter-spacing: 2px;
+  background-color: #333;
+  color: #fdfbf7;
+  padding: 10px;
+  font-size: 1.5em;
+  transform: rotate(-1deg); /* 少し傾ける */
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
   margin-bottom: 40px;
-  border-bottom: 1px solid #444;
-  padding-bottom: 10px;
 }
 
-/* リストのリセット */
 .accordion-list {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
-/* 階層のインデント（あえて浅くしてスマホで見やすく） */
 .accordion-list .accordion-list {
-  padding-left: 15px; 
-  border-left: 1px solid #444; /* 階層のガイド線 */
+  padding-left: 20px;
+  border-left: 2px dashed #bbb; /* 点線のガイド */
+  margin-left: 10px;
 }
 
 details {
-  margin-bottom: 10px;
-  background-color: #252525;
-  border-radius: 4px;
-  overflow: hidden; /* 角丸からはみ出るのを防ぐ */
-  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border: 2px solid #333; /* 手書き風の太枠 */
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1); /* ズレた影 */
 }
 
 summary {
-  display: block; /* Chrome等のバグ対策 */
-  padding: 15px 20px 15px 45px; /* 左パディングを広めに */
+  display: block;
+  padding: 12px 15px 12px 35px;
   cursor: pointer;
   position: relative;
   font-weight: bold;
-  color: #fff;
-  background: #333;
-  user-select: none;
+  font-size: 1.1em;
   outline: none;
-  border-left: 4px solid transparent; /* アクセントバーの準備 */
-  transition: background 0.2s, border-color 0.2s;
+  user-select: none;
 }
 
-/* デフォルトの矢印を消す */
 summary::-webkit-details-marker { display: none; }
 
-/* オリジナルの矢印（＞） */
+/* 指差しアイコン */
 summary::before {
-  content: '';
+  content: '☞';
   position: absolute;
-  left: 18px;
+  left: 10px;
   top: 50%;
-  width: 6px;
-  height: 6px;
-  border-top: 2px solid #aaa;
-  border-right: 2px solid #aaa;
-  transform: translateY(-50%) rotate(45deg); /* 右向き矢印 */
-  transition: transform 0.3s;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  transition: transform 0.2s;
 }
 
-/* ホバー時 */
-summary:hover {
-  background-color: #3d3d3d;
-}
-
-/* 開いている状態のデザイン */
 details[open] > summary {
-  background-color: #2a2a2a;
-  border-left-color: #d4af37; /* アクセントカラー：ゴールド */
-  color: #d4af37;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #333;
 }
 
-/* 開いている時の矢印（下向き） */
 details[open] > summary::before {
-  transform: translateY(-70%) rotate(135deg);
-  border-color: #d4af37;
+  transform: translateY(-50%) rotate(90deg);
 }
 
-/* ヒント本文 */
 .hint-content {
   padding: 20px;
-  background-color: #1a1a1a;
-  color: #ccc;
+  background-color: #fff;
+  font-size: 0.95em;
   line-height: 1.8;
-  border-top: 1px solid #333;
-  animation: fadeIn 0.5s ease;
 }
 
+/* 重要な部分は赤文字にするクラスなどを想定 */
 .hint-content img {
   max-width: 100%;
-  border-radius: 4px;
-  border: 1px solid #444;
-}
-
-/* フェードインアニメーション */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  border: 5px solid #fff;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  transform: rotate(1deg); /* 写真を置いた感じ */
 }
