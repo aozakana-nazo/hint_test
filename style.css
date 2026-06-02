@@ -72,7 +72,7 @@ summary {
   position: relative;
   font-weight: bold;
   color: var(--dark-gray);
-  background: var(--bg-color);
+  background: rgba(255, 255, 255, 0.9);
   user-select: none;
   outline: none;
   border-left: 4px solid transparent; /* アクセントバーの準備 */
@@ -98,7 +98,7 @@ summary::before {
 
 /* ホバー時 */
 summary:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(246, 25, 25, 0.7);
 }
 
 /* 開いている状態のデザイン */
