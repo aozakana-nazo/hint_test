@@ -76,8 +76,7 @@ summary {
   color: var(--dark-gray);
   background: rgba(249, 249, 249, 0.9);
   user-select: none;
-  outline: none;
-  border-left: 4px solid var(--accent-pink); /* アクセントバーの準備 */
+  outline: none; */
   transition: background 0.2s, border-color 0.2s;
 }
 
