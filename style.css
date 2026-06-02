@@ -54,7 +54,7 @@ h1 {
 /* 階層のインデント（あえて浅くしてスマホで見やすく） */
 .accordion-list .accordion-list {
   padding-left: 15px; 
-  border-left: 1px solid var(--bg-color); /* 階層のガイド線 */
+  border-left: 1px solid var(--accent-pink); /* 階層のガイド線 */
 }
 
 details {
@@ -72,7 +72,7 @@ summary {
   position: relative;
   font-weight: bold;
   color: var(--dark-gray);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(249, 249, 249, 0.9);
   user-select: none;
   outline: none;
   border-left: 4px solid transparent; /* アクセントバーの準備 */
@@ -103,7 +103,7 @@ summary:hover {
 
 /* 開いている状態のデザイン */
 details[open] > summary {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(243, 243, 243, 0.9);
   border-left-color: var(--accent-pink); /* アクセントカラー：ゴールド */
   color: var(--accent-pink);
 }
