@@ -98,7 +98,7 @@ summary::before {
 
 /* ホバー時 */
 summary:hover {
-  background-color: rgba(246, 25, 25, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* 開いている状態のデザイン */
