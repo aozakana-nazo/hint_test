@@ -55,7 +55,7 @@ function buildTreeFromCsvText(csvText) {
       if (!levelName) continue; 
       if (i === lastValidLevelIndex) {
         const contentKey = "content_" + (currentLevel[levelName] ? Object.keys(currentLevel[levelName]).length : 0);
-        currentLevel[levelName] = {contentKey: content}; break;
+        currentLevel[levelName] = {[contentKey]: content}; break;
       } else {
         if (!currentLevel[levelName]) currentLevel[levelName] = {};
         currentLevel = currentLevel[levelName];
