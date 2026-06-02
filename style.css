@@ -54,12 +54,12 @@ h1 {
 /* 階層のインデント（あえて浅くしてスマホで見やすく） */
 .accordion-list .accordion-list {
   padding-left: 15px; 
-  border-left: 1px solid var(--accent-pink); /* 階層のガイド線 */
+  border-left: 4px solid var(--accent-pink); /* 階層のガイド線 */
 }
 
 details {
   margin-bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(243, 243, 243, 0.9);
   border-radius: 4px;
   overflow: hidden; /* 角丸からはみ出るのを防ぐ */
   transition: all 0.3s ease;
