@@ -75,7 +75,9 @@ summary {
   background: rgba(249, 249, 249, 0.9);
   user-select: none;
   outline: none;
-  border-left: 4px solid transparent; /* アクセントバーの準備 */
+  border-left: 4px solid var(--accent-pink); /* アクセントバーの準備 */
+  border-top: 1px solid var(--dark-gray);
+  border-bottom: 1px solid var(--dark-gray);
   transition: background 0.2s, border-color 0.2s;
 }
 
@@ -104,7 +106,6 @@ summary:hover {
 /* 開いている状態のデザイン */
 details[open] > summary {
   background-color: rgba(243, 243, 243, 0.9);
-  border-left-color: var(--accent-pink); /* アクセントカラー：ゴールド */
   color: var(--accent-pink);
 }
 
@@ -120,7 +121,7 @@ details[open] > summary::before {
   background-color: var(--bg-color);
   color: var(--dark-gray);
   line-height: 1.8;
-  border-top: 1px solid var(--bg-color);
+  border-top: 1px solid rgba(200,200,200,0.9);
   animation: fadeIn 0.5s ease;
 }
 
