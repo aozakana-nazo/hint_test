@@ -1,7 +1,7 @@
 :root {
     --bg-color: #f0f0f0; /* 全体の背景（明るいグレー） */
     --accent-pink: #ff7eb9; /* アクセントのピンク */
-    --dark-gray: #333333; /* 文字・ボーダーの濃いグレー */
+    --dark-gray: #404040; /* 文字・ボーダーの濃いグレー */
     --checker-bg: #e5e5e5; /* チェッカーパターンの色 */
 }
 
@@ -90,8 +90,8 @@ summary::before {
   top: 50%;
   width: 6px;
   height: 6px;
-  border-top: 2px solid var(--bg-color);
-  border-right: 2px solid var(--bg-color);
+  border-top: 2px solid var(--dark-gray);
+  border-right: 2px solid var(--dark-gray);
   transform: translateY(-50%) rotate(45deg); /* 右向き矢印 */
   transition: transform 0.3s;
 }
