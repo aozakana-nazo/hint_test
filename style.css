@@ -58,6 +58,7 @@ h1 {
 
 details {
   margin-bottom: 10px;
+  margin-right: 2px;
   background-color: rgba(243, 243, 243, 0.9);
   border-radius: 4px;
   border-top: 1px solid var(--dark-gray);
