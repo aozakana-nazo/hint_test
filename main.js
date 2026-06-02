@@ -54,7 +54,8 @@ function buildTreeFromCsvText(csvText) {
       const levelName = levels[i];
       if (!levelName) continue; 
       if (i === lastValidLevelIndex) {
-        currentLevel[levelName] = content; break;
+        const contentKey = "content_" + (currentLevel[levelName] ? Object.keys(currentLevel[levelName]).length : 0);
+        currentLevel[levelName] = {contentKey: content}; break;
       } else {
         if (!currentLevel[levelName]) currentLevel[levelName] = {};
         currentLevel = currentLevel[levelName];
@@ -68,6 +69,10 @@ function buildHtmlRecursive(treeNode) {
   if (typeof treeNode === 'object' && treeNode !== null) {
     let html = '<ul class="accordion-list">\n';
     for (const key in treeNode) {
+      if (key.startsWith('content_')) {
+        html += buildHtmlRecursive(treeNode[key]);
+        continue;
+      }
       // 見出しにもHTMLタグを使用可能にするためそのまま出力
       html += `<li><details><summary>${key}</summary>${buildHtmlRecursive(treeNode[key])}</details></li>\n`;
     }
